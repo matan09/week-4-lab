@@ -45,11 +45,14 @@ let EURO_amount = 100
 console.log('the equivalent value of 100 in AUD is: ' + AUD_rate * EURO_amount)
 // TODO write code to identify the currency symbol that has the highest exchange rate compared to Euros.
 //    In other words, identify the property with the largest value. the answer is BRL (Brazilian Real) at 3.8959 BRL to 1 Euro.
-var highest_rate = 0
-for (var prop in rates){
-  if(rates[prop] > highest_rate){
-    highest_rate = rates[prop]
 
+let allValues = Object.values(rates)
+let highest_rate = Math.max(...allValues)
+for(let currency in rates){
+  if(rates.hasOwnProperty(currency)){
+    if(rates[currency] === highest_rate){
+      console.log("The currency that has the highest rate is : " + currency)
+    }
   }
 }
 
@@ -62,7 +65,7 @@ let cats_and_owners = [
   { name: "Gary Oldman", cat: "Soymilk" },
   { name: "Katy Perry", cat: "Kitty Purry" },
   { name: "Snoop Dogg", cat: "Miles Davis" }
-];
+],
 
 // TODO print Gary Oldman's cat's name
 console.log(cats_and_owners[1].cat)
