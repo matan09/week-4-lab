@@ -107,7 +107,7 @@
             errors.push('please enter a zipcode')
         }
         // TODO Validate the zipcode is in the range 55001 and 56763 (which checks that the zip code is in Minnesota)
-        if(zipcode < 55001 && zipcode > 56763){
+        if(zipcode < 55001 || zipcode > 56763){
             errors.push('zipcode must be in the range 55001 and 56763 ')
         }
         // TODO - If there are any errors after checking all of the elements, 
